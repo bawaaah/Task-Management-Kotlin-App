@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.taskflow.fragments.home"
+        android:label="home" >
+        <action
+            android:id="@+id/action_home2_to_add2"
+            app:destination="@id/add2" />
+        <action
+            android:id="@+id/action_home2_to_edit"
+            app:destination="@id/edit" />
+    </fragment>
+    <fragment
+        android:id="@+id/add2"
+        android:name="com.example.taskflow.fragments.add"
+        android:label="add" >
+        <action
+            android:id="@+id/action_add2_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit"
+        android:name="com.example.taskflow.fragments.edit"
+        android:label="edit" >
+        <action
+            android:id="@+id/action_edit_to_home2"
+            app:destination="@id/home2" />
+        <argument
+            android:name="task"
+            app:argType="com.example.taskflow.model.task"
+            app:nullable="true"/>
+    </fragment>
+</navigation>
